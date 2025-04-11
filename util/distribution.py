@@ -31,8 +31,8 @@ def fill_mean(data):
     return ar.tolist()
 
 class QuantileAdaption:
-    def __init__(self, raw):
-        self.raw = fill_mean(raw)
+    def __init__(self, raw, method = fill_mean):
+        self.raw = method(raw)
         self.scoring = pd.DataFrame()
         self.mid = pd.DataFrame()
         self.final = pd.DataFrame()
@@ -70,10 +70,51 @@ class QuantileAdaption:
         )
         final.loc[final['raw'] == 0,'final_score'] = 0
         self.final = final
-        print(final)
 
 if __name__ == '__main__':
-    data = [1352481,957616,308276,416706,182837,154795,205201,176252,22956,130407,78402,10810,50307,11401]
+    data = [
+        10.0,
+        9.0,
+        7.0,
+        5.0,
+        6.0,
+        9.0,
+        4.0,
+        7.0,
+        1.0,
+        3.0,
+        2.0,
+        1.0,
+        2.0,
+        0.0,
+        4.0,
+        7.0,
+        1.0,
+        2.0,
+        2.0,
+        3.0,
+        8.0,
+        1.0,
+        5.0,
+        1.0,
+        3.0,
+        1.0,
+        3.0,
+        1.0,
+        3.0,
+        1.0,
+        0.0,
+        1.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        0.0,
+        0.0,
+        0.0,
+    ]
     q = QuantileAdaption(data)
     q.compute()
     q.create_final_score()
+    pass

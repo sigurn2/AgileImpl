@@ -1,7 +1,7 @@
 import pandas as pd
-from dask.dataframe.io.parquet.core import sorted_columns
 
 from util.clip import clipper
+
 dimension = {
     'd1.1': [
         'p1.i',
@@ -46,6 +46,16 @@ dimension = {
         'g3.i',
         'g3.p.ii',
     ],
+    # ----------------- 202504221 add sum of investment on ai ----------------  #
+    'd3.3': [
+        'g6.i',
+        'g6.p.ii',
+    ],
+    'd3.4': [
+        'g7.i',
+        'g7.p.ii',
+    ],
+    # ----------------- end of comment --------------------------------------- #
     'd4.1':[
         'g4.i',
         'g4.p.ii',
@@ -156,6 +166,8 @@ a_dimension = {
     'a3': [
         'd3.1',
         'd3.2',
+        'd3.3',
+        'd3.4',
     ],
     'a4': [
         'd4.1',

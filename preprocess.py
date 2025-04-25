@@ -25,6 +25,8 @@ condition = {
         'g3', # D3.2AI初创公司数量2023年
         'g4', # 案例求和
         'g5', # D6.5 AI专项支出预算规模&GDP比例
+        'g6', # D3.3 Global private investment in AI by geographic area, 2013–24 (sum)
+        'g7', # Number of newly funded AI companies by geographic area, 2013–24 (sum)
     ],
     'art' : [
         'w1', # D17.1 AI治理主题的文献数量&总数比例
@@ -46,7 +48,7 @@ if __name__ == '__main__':
 
     cp = file.copy()
     cp = cp.drop(cp.index[0])
-    cp = cp.drop(cp.index[-1])
+    # cp = cp.drop(cp.index[-1])
 
     for col in cp.columns:
         s = col.lower()

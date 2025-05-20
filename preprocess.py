@@ -36,7 +36,7 @@ condition = {
 }
 condition_1 = r"^[pgw]\d+$"
 
-output_file = 'processed.xlsx'
+output_file = 'output/processed.xlsx'
 
 def find_divisor(string):
     for k, v in condition.items():

@@ -1,8 +1,8 @@
 import pandas as pd
 import re
 from util.distribution import QuantileAdaption
-input_file = 'processed.xlsx'
-final_file = 'final_score_mean.xlsx'
+input_file = 'output/processed.xlsx'
+final_file = 'output/final_score_mean.xlsx'
 condition_1 = r"^[pgwu]\d+$"  # 得到未除过系数的列
 condition_2 = r".*\.p$" # 得到除过系数的列
 
